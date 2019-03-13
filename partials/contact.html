@@ -32,9 +32,12 @@
     <textarea placeholder="Uw bericht..." name="bericht" class="form-control" rows="8" required="required"></textarea>
   </div>
   <div class="form-group">
-    <span>Bijlage (u kan meerdere bestanden kiezen. <strong>Let op: enkel PDF bestanden</strong>):</span>
-    <input type="file" placeholder="Email" name="attachments[]" id="attachment" class="form-control" accept=".pdf" multiple />
+    <span class="list_attachments"></span>
+    <label for="attachment" class="btn btn-danger lbl_browse">Voeg bestanden toe (Enkel PDF)</label>
+
+    <input type="file" placeholder="Email" name="attachments[]" id="attachment" class="form-control attachment" accept=".pdf" multiple />
+
   </div>
 
-  <button type="submit" class="btn btn-primary pull-right" id="submit">Verzenden</button>
+  <button type="submit" class="btn btn-primary float-right" id="submit">Verzenden</button>
 </form>
