@@ -1,0 +1,299 @@
+<h3>Bestel online</h3>
+<form role="form" id="formUpload" class="form" name="formUpload" enctype="multipart/form-data">
+	<div class="step1">
+		<h4>Voeg je bestanden bij <small>(max 25mb/bestand)</small></h4>
+
+		<ul>
+			<li ng-repeat="file in upload_files" style="font:smaller">{{file.name}} {{file.$errorParam}}
+				<span class="progress" ng-show="file.progress >= 0">
+					<div style="width:{{file.progress}}%" ng-bind="file.progress + '%'"></div>
+				</span>
+			</li>
+			<li ng-repeat="file in errFiles" class="alert alert-danger">{{file.name}} <strong>{{file.$error}} {{file.$errorParam}}</strong>
+			</li>
+		</ul>
+		{{errorMsg}}
+		<button class="btn btn-default btn-file" ngf-select ngf-multiple="true" ng-model="upload_files" accept=".pdf,.jpg,.jpeg,.png,.gif" ngf-max-size="25MB" ngf-model-invalid="errFiles">Selecteer bestanden</button>
+		<label class="fileUploadName"></label>
+	  <div class="form-group">
+	    <h4>Formaat</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="A6" name="format">A6
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="A5" name="format">A5
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="A4" name="format" checked>A4
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="A3" name="format">A3
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="A3" name="format">A2
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="A3" name="format">A1
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="A3" name="format">A0
+			</label>
+	  </div>
+	  <div class="form-group">
+	    <h4>Kleur</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="Zwart wit" name="color" checked>Zwart wit
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="Kleur" name="color">Kleur
+			</label>
+	  </div>
+	  <div class="form-group">
+	    <h4>Dubbelzijdig</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="Enkelzijdig" name="rv" checked>Enkelzijdig
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="Dubbelzijdig" name="rv">Dubbelzijdig
+			</label>
+	  </div>
+	  <div class="form-group">
+	    <h4>Gewicht</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="80g" name="gr" checked>80g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="100g" name="gr">100g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="120g" name="gr">120g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="200g" name="gr">200g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="250g" name="gr">250g
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Papierkleur</h4>
+			<select name="papercolor">
+				<option value="Wit" selected>Wit</option>
+				<option style="background-color: #F5F1E6" value="Parelgrijs">Parelgrijs</option>
+				<option style="background-color: #FFFFE6" value="Ivoor">Ivoor</option>
+				<option style="background-color: #FFFE9D" value="Geel">Geel</option>
+				<option style="background-color: #FFF040" value="Zonnegeel">Zonnegeel</option>
+				<option style="background-color: #F7D007" value="Zonnebloemgeel">Zonnebloemgeel</option>
+				<option style="background-color: #D5FCD0" value="Groen">Groen</option>
+				<option style="background-color: #8BC645" value="Grasgroen">Grasgroen</option>
+				<option style="background-color: #4E8F65" value="Dennegroen">Dennegroen</option>
+				<option style="background-color: #ABE2F7" value="Lichtblauw">Lichtblauw</option>
+				<option style="background-color: #A9C1ED" value="Lavendelblauw">Lavendelblauw</option>
+				<option style="background-color: #158EC7" value="Caraiben">Caraiben</option>
+				<option style="background-color: #EFD0EF" value="Lila">Lila</option>
+				<option style="background-color: #9873B9" value="Violet">Violet</option>
+				<option style="background-color: #F069AB" value="Fuschia">Fuschia</option>
+				<option style="background-color: #FEE479" value="Goudgeel">Goudgeel</option>
+				<option style="background-color: #FDB278" value="Oranje">Oranje</option>
+				<option style="background-color: #E54749" value="Koraalrood">Koraalrood</option>
+				<option style="background-color: #CA4653" value="Kersenrood">Kersenrood</option>
+				<option style="background-color: #FCDDE0" value="Roze">Roze</option>
+				<option style="background-color: #FFDCA8" value="Abrikoos">Abrikoos</option>
+				<option style="background-color: #FEE3D3" value="Zalm">Zalm</option>
+			</select>
+	  </div>
+		<div class="form-group">
+	    <h4>Kaft voor</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="nee" name="covergr" checked>Nee
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="80g" name="covergr">80g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="120g" name="covergr">120g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="200g" name="covergr">200g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="250g" name="covergr">250g (enkel wit)
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Papierkleur voor</h4>
+			<select name="papercolorfront">
+				<option value="" selected></option>
+				<option value="Wit">Wit</option>
+				<option style="background-color: #F5F1E6" value="Parelgrijs">Parelgrijs</option>
+				<option style="background-color: #FFFFE6" value="Ivoor">Ivoor</option>
+				<option style="background-color: #FFFE9D" value="Geel">Geel</option>
+				<option style="background-color: #FFF040" value="Zonnegeel">Zonnegeel</option>
+				<option style="background-color: #F7D007" value="Zonnebloemgeel">Zonnebloemgeel</option>
+				<option style="background-color: #D5FCD0" value="Groen">Groen</option>
+				<option style="background-color: #8BC645" value="Grasgroen">Grasgroen</option>
+				<option style="background-color: #4E8F65" value="Dennegroen">Dennegroen</option>
+				<option style="background-color: #ABE2F7" value="Lichtblauw">Lichtblauw</option>
+				<option style="background-color: #A9C1ED" value="Lavendelblauw">Lavendelblauw</option>
+				<option style="background-color: #158EC7" value="Caraiben">Caraiben</option>
+				<option style="background-color: #EFD0EF" value="Lila">Lila</option>
+				<option style="background-color: #9873B9" value="Violet">Violet</option>
+				<option style="background-color: #F069AB" value="Fuschia">Fuschia</option>
+				<option style="background-color: #FEE479" value="Goudgeel">Goudgeel</option>
+				<option style="background-color: #FDB278" value="Oranje">Oranje</option>
+				<option style="background-color: #E54749" value="Koraalrood">Koraalrood</option>
+				<option style="background-color: #CA4653" value="Kersenrood">Kersenrood</option>
+				<option style="background-color: #FCDDE0" value="Roze">Roze</option>
+				<option style="background-color: #FFDCA8" value="Abrikoos">Abrikoos</option>
+				<option style="background-color: #FEE3D3" value="Zalm">Zalm</option>
+			</select>
+	  </div>
+		<div class="form-group">
+	    <h4>Kaft achter</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="nee" name="covergr" checked>Nee
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="80g" name="covergr">80g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="120g" name="covergr">120g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="200g" name="covergr">200g
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="250g" name="covergr">250g (enkel wit)
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Papierkleur achter</h4>
+			<select name="papercolorback">
+				<option value="" selected></option>
+				<option value="Wit">Wit</option>
+				<option style="background-color: #F5F1E6" value="Parelgrijs">Parelgrijs</option>
+				<option style="background-color: #FFFFE6" value="Ivoor">Ivoor</option>
+				<option style="background-color: #FFFE9D" value="Geel">Geel</option>
+				<option style="background-color: #FFF040" value="Zonnegeel">Zonnegeel</option>
+				<option style="background-color: #F7D007" value="Zonnebloemgeel">Zonnebloemgeel</option>
+				<option style="background-color: #D5FCD0" value="Groen">Groen</option>
+				<option style="background-color: #8BC645" value="Grasgroen">Grasgroen</option>
+				<option style="background-color: #4E8F65" value="Dennegroen">Dennegroen</option>
+				<option style="background-color: #ABE2F7" value="Lichtblauw">Lichtblauw</option>
+				<option style="background-color: #A9C1ED" value="Lavendelblauw">Lavendelblauw</option>
+				<option style="background-color: #158EC7" value="Caraiben">Caraiben</option>
+				<option style="background-color: #EFD0EF" value="Lila">Lila</option>
+				<option style="background-color: #9873B9" value="Violet">Violet</option>
+				<option style="background-color: #F069AB" value="Fuschia">Fuschia</option>
+				<option style="background-color: #FEE479" value="Goudgeel">Goudgeel</option>
+				<option style="background-color: #FDB278" value="Oranje">Oranje</option>
+				<option style="background-color: #E54749" value="Koraalrood">Koraalrood</option>
+				<option style="background-color: #CA4653" value="Kersenrood">Kersenrood</option>
+				<option style="background-color: #FCDDE0" value="Roze">Roze</option>
+				<option style="background-color: #FFDCA8" value="Abrikoos">Abrikoos</option>
+				<option style="background-color: #FEE3D3" value="Zalm">Zalm</option>
+			</select>
+	  </div>
+		<div class="form-group">
+	    <h4>Perforeren</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="2 gaten" name="perf">2 gaten
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="4 gaten" name="perf">4 gaten
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Nieten</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="1 nietje" name="niet">1 nietje
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="2 nietjes" name="niet">2 nietjes
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Snijden</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="Ja" name="snijden">Ja (Specifieer bij opmerkingen)
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Vouwen</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="In 2 vouwen" name="vouwen">In 2 vouwen
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="Z-vouw" name="vouwen">Z-vouw
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="U-vouw" name="vouwen">U-vouw
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Plooien en nieten</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="Open A4, gesloten A5" name="pn">Open A4, gesloten A5
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="Open A3, gesloten A4" name="pn">Open A3, gesloten A4
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Lamineren</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="Ja" name="lam">Ja
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Inbinden</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="PVC Ringen" name="inb">PVC Ringen
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="Metaalringen" name="inb">Metaalringen
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="Lijmen" name="inb">Lijmen (u wordt gecontacteerd)
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>PVC</h4>
+			<label class="radio-inline">
+	    	<input type="radio" value="PVC voor" name="inbPVC">PVC voor
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="PVC achter" name="inbPVC">PVC achter
+			</label>
+			<label class="radio-inline">
+	    	<input type="radio" value="PVC voor en achter" name="inbPVC">PVC voor en achter
+			</label>
+	  </div>
+		<div class="form-group">
+	    <h4>Aantal exemplaren</h4>
+			<input type="text" class="form-control" value="" name="amount">
+		</div>
+		<div class="form-group">
+	    <h4>Opmerkingen</h4>
+			<textarea class="form-control"></textarea>
+		</div>
+		<button type="button" class="btn btn-default" ng-click="uploadFiles(upload_files, $invalidFiles)">Opslaan en uploaden</button>
+		<button type="button" class="btn btn-default btn-next-step" onClick="step('.step1','.step2')">Stap 2 &raquo</button>
+	</div>
+	<div class="step2">
+		<h4>Bedrijf</h4>
+		<input type="text" class="form-control" name="company" value="">
+		<h4>Naam</h4>
+		<input type="text" class="form-control" name="name" value="">
+		<h4>Straat + nr</h4>
+		<input type="text" class="form-control" name="streetnr" value="">
+		<h4>Postcode + Gemeente</h4>
+		<input type="text" class="form-control" name="pctown" value="">
+		<h4>BTW Nummer</h4>
+		<input type="text" class="form-control" name="vatnr" value="">
+		<h4>Telefoon</h4>
+		<input type="text" class="form-control" name="tel" value="">
+		<h4>E-mail</h4>
+		<input type="text" class="form-control" name="email" value="">
+	</div>
+</form>
