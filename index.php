@@ -60,8 +60,7 @@ if (isset($_GET["page"])) {
     <div class="container">
     <div class="poppup"></div>
       <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-10 col-12 header mb-4">
+        <div class="col-lg-10 offset-lg-2 col-12 header mb-4">
           <div class="row align-items-center">
             <div class="col-lg-12 col-10">
               <img src="img/logo_.png">
@@ -73,8 +72,7 @@ if (isset($_GET["page"])) {
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-10">
+        <div class="col-lg-10 offset-lg-2">
           <?php
           if (!in_holiday(date("Y-m-d"))) {
             ?>
@@ -142,7 +140,9 @@ if (isset($_GET["page"])) {
             <a href="plan-afdruk" class="btn btn-xs btn-primary float-right">Lees meer &raquo;</a>
           </div>
           <div>
-            Ons logo op uw commerciëel printwerk?
+            Ons logo op uw printwerk?
+            <br />
+            Wij steunen verenigingen en studentenclubs!
             <br />
             <em><strong>Een reductie van 50% </strong></em>
             <br />&nbsp;

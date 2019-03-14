@@ -36,8 +36,8 @@ $("#attachment").on("change", function () {
   if (this.files[0].size > 10000000) {
     alert("Je bestanden mogen niet groter dan 10mb zijn. Anders kan u gewoon een mailtje sturen naar info@alphacopyleuven.be");
     $(this).val("");
+    $(".list_attachments").html("");
   }
-
 
   OnUploadCheck(this);
 });

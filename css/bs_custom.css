@@ -1,3 +1,28 @@
+/*
+.color-primary-0 { color: #3CBC8D }
+.color-primary-1 { color: #91E5C6 }
+.color-primary-2 { color: #60D1A6 }
+.color-primary-3 { color: #1FAB76 }
+.color-primary-4 { color: #07905C }
+
+.color-secondary-1-0 { color: #4380B6 }
+.color-secondary-1-1 { color: #96BFE3 }
+.color-secondary-1-2 { color: #669CCC }
+.color-secondary-1-3 { color: #2769A3 }
+.color-secondary-1-4 { color: #10508A }
+
+.color-secondary-2-0 { color: #FFB751 }
+.color-secondary-2-1 { color: #FFD8A2 }
+.color-secondary-2-2 { color: #FFC675 }
+.color-secondary-2-3 { color: #FCA72E }
+.color-secondary-2-4 { color: #D5810A }
+
+.color-complement-0 { color: #FF8751 }
+.color-complement-1 { color: #FFBFA2 }
+.color-complement-2 { color: #FFA075 }
+.color-complement-3 { color: #FC6E2E }
+.color-complement-4 { color: #D5490A }
+*/
 .btn-primary { background-color: #4380B6 }
 .btn-danger { background-color: #D5490A }
 .alert-warning { background-color: #FFC675 }
